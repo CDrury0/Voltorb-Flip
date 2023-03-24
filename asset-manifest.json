@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/voltorb-flip/static/css/main.073c9b0a.css",
+    "main.js": "/voltorb-flip/static/js/main.b0cb0059.js",
+    "static/js/787.4de18f9e.chunk.js": "/voltorb-flip/static/js/787.4de18f9e.chunk.js",
+    "static/media/logo.svg": "/voltorb-flip/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/voltorb-flip/index.html",
+    "main.073c9b0a.css.map": "/voltorb-flip/static/css/main.073c9b0a.css.map",
+    "main.b0cb0059.js.map": "/voltorb-flip/static/js/main.b0cb0059.js.map",
+    "787.4de18f9e.chunk.js.map": "/voltorb-flip/static/js/787.4de18f9e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.b0cb0059.js"
+  ]
+}
