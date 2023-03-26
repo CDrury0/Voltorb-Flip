@@ -1,38 +1,36 @@
 .App {
-  text-align: center;
+  background-color: #01360f;
+  display: flex;
+  height: 100vh; /*change font scaling for "correct" height when scaled weird*/
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Grid {
+  flex: 1.2;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.CardRow {
+  display: flex;
+  flex: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.CardRow > * {
+  flex: 1;
+  margin: 10px;
+}
+
+.Card {
+  background-image: url("./Images/cardback.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.Counter {
+  background-color: pink;
+}
+
+.SidePanel {
+  flex: 0.8;
+  background-color: blue;
 }
