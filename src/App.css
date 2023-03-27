@@ -27,10 +27,21 @@
 }
 
 .Counter {
-  background-color: pink;
+  background-color: #6e6c69;
+  size: fit-content;
+  align-self: center;
+}
+
+#CounterRow > .Counter {
+  align-self: flex-start;
 }
 
 .SidePanel {
   flex: 0.8;
   background-color: blue;
+}
+
+h1 {
+  font-size: 2vw;
+  margin: auto;
 }

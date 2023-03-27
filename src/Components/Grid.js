@@ -30,7 +30,7 @@ const CardRow = (props) => {
     return(
         <div className="CardRow">
             {cards}
-            <Counter points={rowPoints} torbs={rowTorbs}/>
+            <Counter className="RowCounter" points={rowPoints} torbs={rowTorbs}/>
         </div>
     );
 }
@@ -46,7 +46,7 @@ const CounterRow = (props) => {
         counters.push(<Counter key={i} points={points} torbs={torbs}/>);
     }
     return(
-        <div className="CardRow">
+        <div className="CardRow" id="CounterRow">
             {counters}
             <div className="dummy"></div>
         </div>
