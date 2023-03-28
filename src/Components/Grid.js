@@ -2,8 +2,10 @@ import cardTorb from "../Images/cardvoltorb.png";
 import card1 from "../Images/card1.png";
 import card2 from "../Images/card2.png";
 import card3 from "../Images/card3.png";
-import Card from "./Card";
-import Counter from "./Counter";
+import CardRow from "./CardRow";
+import CounterRow from "./CounterRow";
+
+const imgLookup = [cardTorb, card1, card2, card3];
 
 const makeGridData = (size) => {
     const data = [];
@@ -14,7 +16,6 @@ const makeGridData = (size) => {
         }
         data.push(temp);
     }
-    console.log(data);
     return data;
 }
 
@@ -24,71 +25,19 @@ const getPointsAndTorbs = (setOfCards) => {
     return [rowPoints, rowTorbs];
 }
 
-const CardRow = (props) => {
-    const cards = props.rowData.map((val, index) => <Card key={index} value={val} cardData={cardDataObjects.find(obj => obj.pointValue === props.rowData[index])}/>);
-    const [rowPoints, rowTorbs] = getPointsAndTorbs(props.rowData);
-    return(
-        <div className="CardRow">
-            {cards}
-            <Counter className="RowCounter" points={rowPoints} torbs={rowTorbs}/>
-        </div>
-    );
-}
-
-const CounterRow = (props) => {
-    let counters = [];
-    for(let i = 0; i < props.gridData.length; i++){
-        let column = [];
-        for(let j = 0; j < props.gridData.length; j++){
-            column.push(props.gridData[j][i]);
-        }
-        const [points, torbs] = getPointsAndTorbs(column);
-        counters.push(<Counter key={i} points={points} torbs={torbs}/>);
-    }
-    return(
-        <div className="CardRow" id="CounterRow">
-            {counters}
-            <div className="dummy"></div>
-        </div>
-    );
-} 
-
 const Grid = () => {
     const gridSize = 5;
     const gridData = makeGridData(gridSize);
-    const gridRows = gridData.map((val, index) => <CardRow key={index} value={val} rowData={gridData[index]}/>);
+    const gridRows = gridData.map((val, index) => {
+        const [rowPoints, rowTorbs] = getPointsAndTorbs(gridData[index]);
+        return <CardRow key={index} value={val} rowData={gridData[index]} rowPoints={rowPoints} rowTorbs={rowTorbs} imgLookup={imgLookup}/>
+    });
     return (
         <div className="Grid">
             {gridRows}
-            <CounterRow gridData={gridData}/>
+            <CounterRow gridData={gridData} getPointsAndTorbs={getPointsAndTorbs}/>
         </div>
     );
 }
-
-const torbObj = {
-    pointValue: 0,
-    cardFront: cardTorb,
-    flipAction: "" //add function for when card is flipped
-};
-
-const cardObj1 = {
-    pointValue: 1,
-    cardFront: card1,
-    flipAction: "" //add function for when card is flipped
-};
-
-const cardObj2 = {
-    pointValue: 2,
-    cardFront: card2,
-    flipAction: "" //add function for when card is flipped
-};
-
-const cardObj3 = {
-    pointValue: 3,
-    cardFront: card3,
-    flipAction: "" //add function for when card is flipped
-};
-
-const cardDataObjects = [torbObj, cardObj1, cardObj2, cardObj3];
 
 export default Grid;

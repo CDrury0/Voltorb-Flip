@@ -21,7 +21,6 @@
 }
 
 .Card {
-  background-image: url("./Images/cardback.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -42,6 +41,6 @@
 }
 
 h1 {
-  font-size: 2vw;
+  font-size: 1.75vw;
   margin: auto;
 }
