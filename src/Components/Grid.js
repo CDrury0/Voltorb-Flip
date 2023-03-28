@@ -1,7 +1,7 @@
-import cardTorb from "../Images/cardvoltorb.png";
-import card1 from "../Images/card1.png";
-import card2 from "../Images/card2.png";
-import card3 from "../Images/card3.png";
+import cardTorb from "../Images/voltorb-icon.svg";
+import card1 from "../Images/one.svg";
+import card2 from "../Images/two.svg";
+import card3 from "../Images/three.svg";
 import CardRow from "./CardRow";
 import CounterRow from "./CounterRow";
 

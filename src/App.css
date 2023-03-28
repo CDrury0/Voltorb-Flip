@@ -18,17 +18,22 @@
 .CardRow > * {
   flex: 1;
   margin: 10px;
-}
+  min-width: 10vh;
+  min-height: 5vw;
+} 
 
 .Card {
-  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
+  border: thin solid black;
 }
 
 .Counter {
   background-color: #6e6c69;
   size: fit-content;
   align-self: center;
+  border: thin solid black;
+  border-radius: 0.5vw;
 }
 
 #CounterRow > .Counter {
@@ -36,7 +41,7 @@
 }
 
 .SidePanel {
-  flex: 0.8;
+  flex: 0.7;
   background-color: blue;
 }
 
