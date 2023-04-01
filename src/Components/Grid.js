@@ -7,7 +7,12 @@ import CounterRow from "./CounterRow";
 
 const imgLookup = [cardTorb, card1, card2, card3];
 
-const makeGridData = (size) => {
+let gridData = [];
+
+const makeGridData = (size, overwrite) => {
+    if(!overwrite && gridData.length > 0){
+        return;
+    }
     const data = [];
     for(let i = 0; i < size; i++){
         let temp = [];
@@ -16,7 +21,7 @@ const makeGridData = (size) => {
         }
         data.push(temp);
     }
-    return data;
+    gridData = data;
 }
 
 const getPointsAndTorbs = (setOfCards) => {
@@ -25,12 +30,12 @@ const getPointsAndTorbs = (setOfCards) => {
     return [rowPoints, rowTorbs];
 }
 
-const Grid = () => {
+const Grid = (props) => {
     const gridSize = 5;
-    const gridData = makeGridData(gridSize);
+    makeGridData(gridSize, false);
     const gridRows = gridData.map((val, index) => {
         const [rowPoints, rowTorbs] = getPointsAndTorbs(gridData[index]);
-        return <CardRow key={index} value={val} rowData={gridData[index]} rowPoints={rowPoints} rowTorbs={rowTorbs} imgLookup={imgLookup}/>
+        return <CardRow key={index} value={val} rowData={gridData[index]} rowPoints={rowPoints} rowTorbs={rowTorbs} imgLookup={imgLookup} roundScore={props.roundScore} setRoundScore={props.setRoundScore}/>
     });
     return (
         <div className="Grid">

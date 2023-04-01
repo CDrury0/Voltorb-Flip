@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css';
 import Grid from "./Components/Grid.js";
 import SidePanel from "./Components/SidePanel.js";
@@ -14,10 +15,11 @@ large
 */
 
 function App() {
+  const [roundScore, setRoundScore] = useState(0);
   return (
     <div className="App">
-      <Grid/>
-      <SidePanel/>
+      <Grid roundScore={roundScore} setRoundScore={setRoundScore}/>
+      <SidePanel roundScore={roundScore}/>
     </div>
   );
 }

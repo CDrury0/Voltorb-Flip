@@ -1,9 +1,9 @@
+import ScoreCounter from "./ScoreCounter";
 
-
-const SidePanel = () => {
+const SidePanel = (props) => {
     return(
         <div className="SidePanel">
-            
+            <ScoreCounter score={props.roundScore}/>
         </div>
     );
 }
