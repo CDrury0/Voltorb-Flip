@@ -19,6 +19,7 @@ function App() {
   return (
     <div className="App">
       <Grid roundScore={roundScore} setRoundScore={setRoundScore}/>
+      <div id="gradient"></div>
       <SidePanel roundScore={roundScore}/>
     </div>
   );
