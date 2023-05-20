@@ -16,11 +16,12 @@ large
 
 function App() {
   const [roundScore, setRoundScore] = useState(0);
+  const [clickState, setClickState] = useState(1);
   return (
     <div className="App">
-      <Grid roundScore={roundScore} setRoundScore={setRoundScore}/>
+      <Grid roundScore={roundScore} setRoundScore={setRoundScore} clickState={clickState}/>
       <div id="gradient"></div>
-      <SidePanel roundScore={roundScore}/>
+      <SidePanel roundScore={roundScore} setClickState={setClickState}/>
     </div>
   );
 }

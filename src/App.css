@@ -31,11 +31,37 @@
   background-position: center;
   background-size: cover;
   border: thin solid black;
+  position: relative;
+}
+
+.CardBlotter {
+  position: absolute;
+  width: 30%;
+  height: 30%;
+}
+
+#blotter0 {
+  top: 0;
+  left: 0;
+}
+
+#blotter1 {
+  top: 0;
+  right: 0;
+}
+
+#blotter2 {
+  bottom: 0;
+  left: 0;
+}
+
+#blotter3 {
+  bottom: 0;
+  right: 0;
 }
 
 .Counter {
   background-color: #6e6c69;
-  size: fit-content;
   align-self: center;
   border: thin solid black;
   border-radius: 0.5vw;
@@ -55,6 +81,10 @@
 #gradient {
   background-image: linear-gradient(to right, #01360f, #31593c);
   flex: 0.1;
+}
+
+.CardBlotter > h1 {
+  font-size: max(3vh, 1vw);
 }
 
 h1 {

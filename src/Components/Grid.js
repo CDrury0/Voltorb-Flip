@@ -19,14 +19,14 @@ const makeGridData = (size, overwrite) => {
         for (let j = 0; j < size; j++){
             const rand = Math.random();
             let pointVal = 0;
-            if (rand < 0.5) {
+            if (rand < 0.50) {
                 pointVal = 1;   //50% chance of 1  
             }
-            else if (rand < 0.7) {
-                pointVal = 2;   //20% chance of 2
+            else if (rand < 0.66) {
+                pointVal = 2;   //16% chance of 2
             }
-            else if (rand < 0.8) {
-                pointVal = 3;   //10% chance of 3
+            else if (rand < 0.75) {
+                pointVal = 3;   //9% chance of 3
             }            
             temp.push(pointVal);
         }
@@ -46,7 +46,7 @@ const Grid = (props) => {
     makeGridData(gridSize, false);
     const gridRows = gridData.map((val, index) => {
         const [rowPoints, rowTorbs] = getPointsAndTorbs(gridData[index]);
-        return <CardRow key={index} value={val} rowData={gridData[index]} rowPoints={rowPoints} rowTorbs={rowTorbs} imgLookup={imgLookup} roundScore={props.roundScore} setRoundScore={props.setRoundScore}/>
+        return <CardRow key={index} value={val} rowData={gridData[index]} rowPoints={rowPoints} rowTorbs={rowTorbs} imgLookup={imgLookup} roundScore={props.roundScore} setRoundScore={props.setRoundScore} clickState={props.clickState}/>
     });
     return (
         <div className="Grid">
