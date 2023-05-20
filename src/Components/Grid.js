@@ -16,8 +16,19 @@ const makeGridData = (size, overwrite) => {
     const data = [];
     for(let i = 0; i < size; i++){
         let temp = [];
-        for(let j = 0; j < size; j++){
-            temp.push(Math.floor(Math.random() * 3.5)); //3.5 weights the result away from 0, resulting in fewer torbs
+        for (let j = 0; j < size; j++){
+            const rand = Math.random();
+            let pointVal = 0;
+            if (rand < 0.5) {
+                pointVal = 1;   //50% chance of 1  
+            }
+            else if (rand < 0.7) {
+                pointVal = 2;   //20% chance of 2
+            }
+            else if (rand < 0.8) {
+                pointVal = 3;   //10% chance of 3
+            }            
+            temp.push(pointVal);
         }
         data.push(temp);
     }
