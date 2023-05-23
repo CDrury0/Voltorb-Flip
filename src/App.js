@@ -6,6 +6,7 @@ import SidePanel from "./Components/SidePanel.js";
 function App() {
   const [roundScore, setRoundScore] = useState(0);
   const [clickState, setClickState] = useState(4);
+  //useState for new grid bool
   return (
     <div className="App">
       <Grid roundScore={roundScore} setRoundScore={setRoundScore} clickState={clickState}/>
