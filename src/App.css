@@ -67,15 +67,16 @@
   font-size: max(3vh, 1vw);
 }
 
-.BlotterButton {
+button {
   flex: 1;
   background-color: #10401f;
   height: 40%;
+  margin: 0 1%;
   border: thin solid black;
   border-radius: 5px;
 }
 
-.BlotterButton:hover:active {
+button:hover:active {
   background-color: #002000;
 }
 
@@ -106,8 +107,9 @@
   right: 0;
 }
 
-#blotterButtons {
+#buttonRow {
   display: flex;
+  justify-content: space-between;
   flex: 1;
   align-items: flex-start;
   width: 90%;

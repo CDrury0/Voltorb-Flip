@@ -10,7 +10,7 @@ const SidePanel = (props) => {
             </div>
             <div className="subPanel">
                 <h1>Blotters</h1>
-                <div id="blotterButtons">
+                <div id="buttonRow">
                     <BlotterButton value={0} setClickState={props.setClickState} clickState={props.clickState}/>
                     <BlotterButton value={1} setClickState={props.setClickState} clickState={props.clickState}/>
                     <BlotterButton value={2} setClickState={props.setClickState} clickState={props.clickState}/>
@@ -18,7 +18,17 @@ const SidePanel = (props) => {
                 </div>
             </div>
             <div className="subPanel">
-                {/*menu buttons*/}
+                <div id="buttonRow">
+                    <button>
+                        <h1>New Game</h1>
+                    </button>
+                    <button>
+                        <h1>Bank Points</h1>
+                    </button>
+                </div>
+            </div>
+            <div className="subPanel">
+                {/*Instructions*/}
             </div>
             <div className="subPanel" id="credits">
                 <h3>Check out my GitHub <a href="https://github.com/cdrury0" target="_blank" rel="noreferrer">here</a></h3>

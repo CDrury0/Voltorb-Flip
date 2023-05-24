@@ -24,12 +24,12 @@ const makeGridData = (size, maxScore, setMaxScore, overwrite) => {
             if (rand < 0.45) {
                 pointVal = 1;   //45% chance of 1  
             }
-            else if (rand < 0.62) {
-                pointVal = 2;   //17% chance of 2
+            else if (rand < 0.65) {
+                pointVal = 2;   //20% chance of 2
             }
-            else if (rand < 0.70) {
-                pointVal = 3;   //8% chance of 3
-            }                   //which leaves 30% chance of torb
+            else if (rand < 0.75) {
+                pointVal = 3;   //10% chance of 3
+            }                   //which leaves 25% chance of torb
             temp.push(pointVal);
 
             if (pointVal !== 0) {
