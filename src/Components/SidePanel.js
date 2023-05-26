@@ -1,5 +1,6 @@
 import ScoreCounter from "./ScoreCounter";
 import BlotterButton from "./BlotterButton";
+import NewGameButton from "./NewGameButton";
 
 const SidePanel = (props) => {
     return(
@@ -19,9 +20,7 @@ const SidePanel = (props) => {
             </div>
             <div className="subPanel">
                 <div id="buttonRow">
-                    <button>
-                        <h1>New Game</h1>
-                    </button>
+                    <NewGameButton setNewBoard={props.setNewBoard}/>
                     <button>
                         <h1>Bank Points</h1>
                     </button>

@@ -4,14 +4,14 @@ import card2 from "../Images/two.svg";
 import card3 from "../Images/three.svg";
 import CardRow from "./CardRow";
 import CounterRow from "./CounterRow";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const imgLookup = [cardTorb, card1, card2, card3];
 
 let gridData = [];
 
-const makeGridData = (size, maxScore, setMaxScore, overwrite) => {
-    if(!overwrite && gridData.length > 0){
+const makeGridData = (size, setMaxScore, newBoard) => {
+    if(!newBoard && gridData.length > 0){
         return;
     }
     const data = [];
@@ -24,12 +24,12 @@ const makeGridData = (size, maxScore, setMaxScore, overwrite) => {
             if (rand < 0.45) {
                 pointVal = 1;   //45% chance of 1  
             }
-            else if (rand < 0.65) {
-                pointVal = 2;   //20% chance of 2
+            else if (rand < 0.62) {
+                pointVal = 2;   //17% chance of 2
             }
-            else if (rand < 0.75) {
-                pointVal = 3;   //10% chance of 3
-            }                   //which leaves 25% chance of torb
+            else if (rand < 0.70) {
+                pointVal = 3;   //8% chance of 3
+            }                   //which leaves 30% chance of torb
             temp.push(pointVal);
 
             if (pointVal !== 0) {
@@ -51,11 +51,31 @@ const getPointsAndTorbs = (setOfCards) => {
 const Grid = (props) => {
     const [maxScore, setMaxScore] = useState();
     const [revealFaces, setRevealFaces] = useState(false);
-    const gridSize = 5;
-    makeGridData(gridSize, maxScore, setMaxScore, false);
+    const gridSize = 5; //could potentially allow grids of different sizes
+    useEffect(() => {
+        makeGridData(gridSize, setMaxScore, props.newBoard);
+        props.setNewBoard(false);
+    }, [props.newBoard]);
+    useEffect(() => {
+        setRevealFaces(false);
+    }, [revealFaces]);
     const gridRows = gridData.map((val, index) => {
         const [rowPoints, rowTorbs] = getPointsAndTorbs(gridData[index]);
-        return <CardRow key={index} value={val} rowData={gridData[index]} rowPoints={rowPoints} rowTorbs={rowTorbs} imgLookup={imgLookup} roundScore={props.roundScore} setRoundScore={props.setRoundScore} clickState={props.clickState} revealFaces={revealFaces} setRevealFaces={setRevealFaces} maxScore={maxScore}/>
+        return <CardRow
+            key={index}
+            value={val}
+            rowData={gridData[index]}
+            rowPoints={rowPoints}
+            rowTorbs={rowTorbs}
+            imgLookup={imgLookup}
+            roundScore={props.roundScore}
+            setRoundScore={props.setRoundScore}
+            clickState={props.clickState}
+            revealFaces={revealFaces}
+            setRevealFaces={setRevealFaces}
+            maxScore={maxScore}
+            newBoard={props.newBoard}
+        />
     });
     return (
         <div className="Grid">

@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import cardBack from "../Images/cardback.png";
 import CardBlotter from "./CardBlotter";
 
-const Card = ({value, roundScore, cardFront, setRoundScore, clickState, revealFaces, setRevealFaces, maxScore}) => {
+const Card = ({value, roundScore, cardFront, setRoundScore, clickState, revealFaces, setRevealFaces, maxScore, newBoard}) => {
     const [cardImg, setCardImg] = useState(cardBack);
     const [blotters, setBlotters] = useState([]);
     const getClickAction = () => {
+        //0-3 correspond to possible point values, 4 means no blotter selected
         if (clickState === 4) {
             return cardClick();
         }
@@ -35,10 +36,17 @@ const Card = ({value, roundScore, cardFront, setRoundScore, clickState, revealFa
         }
     }
 
-    if (revealFaces && cardImg === cardBack) {
-        setBlotters([]);
-        setCardImg(cardFront);
-    }
+    useEffect(() => {
+        if (revealFaces && cardImg === cardBack) {
+            setBlotters([]);
+            setCardImg(cardFront);
+        }
+        if (newBoard) {
+            setBlotters([]);
+            setCardImg(cardBack);
+        }
+    }, [revealFaces, newBoard]);
+    
 
     return(
         <div className="Card"

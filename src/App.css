@@ -130,7 +130,7 @@ button:hover:active {
   height: 4vh;
 }
 
-h1 {
+h1, p {
   font-size: 1.75vw;
   margin: auto;
   text-align: center;
