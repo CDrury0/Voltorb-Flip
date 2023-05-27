@@ -1,16 +1,20 @@
 {
   "files": {
-    "main.css": "/voltorb-flip/static/css/main.073c9b0a.css",
-    "main.js": "/voltorb-flip/static/js/main.b0cb0059.js",
+    "main.css": "/voltorb-flip/static/css/main.57a0e536.css",
+    "main.js": "/voltorb-flip/static/js/main.dde99449.js",
     "static/js/787.4de18f9e.chunk.js": "/voltorb-flip/static/js/787.4de18f9e.chunk.js",
-    "static/media/logo.svg": "/voltorb-flip/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/PressStart2P-Regular.ttf": "/voltorb-flip/static/media/PressStart2P-Regular.21503c6a5385ab41dde9.ttf",
+    "static/media/voltorb-icon.svg": "/voltorb-flip/static/media/voltorb-icon.238be665ceb659e90286bdf7a5766144.svg",
     "index.html": "/voltorb-flip/index.html",
-    "main.073c9b0a.css.map": "/voltorb-flip/static/css/main.073c9b0a.css.map",
-    "main.b0cb0059.js.map": "/voltorb-flip/static/js/main.b0cb0059.js.map",
+    "static/media/one.svg": "/voltorb-flip/static/media/one.e7328315a9c66a02b1633571e72b9b0d.svg",
+    "static/media/three.svg": "/voltorb-flip/static/media/three.0eae2a3fdeb98cb2bda882a2aa1c39cc.svg",
+    "static/media/two.svg": "/voltorb-flip/static/media/two.c7b30cfdd20d9694c61674d8701fe0b6.svg",
+    "main.57a0e536.css.map": "/voltorb-flip/static/css/main.57a0e536.css.map",
+    "main.dde99449.js.map": "/voltorb-flip/static/js/main.dde99449.js.map",
     "787.4de18f9e.chunk.js.map": "/voltorb-flip/static/js/787.4de18f9e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.b0cb0059.js"
+    "static/css/main.57a0e536.css",
+    "static/js/main.dde99449.js"
   ]
 }
