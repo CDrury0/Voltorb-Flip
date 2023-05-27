@@ -16,6 +16,7 @@ const CardRow = (props) => {
                     setRevealFaces={props.setRevealFaces}
                     maxScore={props.maxScore}
                     newBoard={props.newBoard}
+                    setTotalScore={props.setTotalScore}
                 />
             })}
             <Counter className="RowCounter" points={props.rowPoints} torbs={props.rowTorbs}/>

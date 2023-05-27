@@ -70,7 +70,7 @@
 button {
   flex: 1;
   background-color: #10401f;
-  height: 40%;
+  min-height: 40%;
   margin: 0 1%;
   border: thin solid black;
   border-radius: 5px;
@@ -130,8 +130,20 @@ button:hover:active {
   height: 4vh;
 }
 
+#instructions {
+  padding-left: 5%;
+  align-items: flex-start;
+}
+
+#instructions > h1 {
+  margin: 0;
+  text-align: left;
+  font-size: 1.25vw;
+  padding-bottom: 4px;
+}
+
 h1, p {
-  font-size: 1.75vw;
+  font-size: 1.5vw;
   margin: auto;
   text-align: center;
 }

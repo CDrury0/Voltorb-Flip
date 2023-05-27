@@ -50,15 +50,11 @@ const getPointsAndTorbs = (setOfCards) => {
 
 const Grid = (props) => {
     const [maxScore, setMaxScore] = useState();
-    const [revealFaces, setRevealFaces] = useState(false);
     const gridSize = 5; //could potentially allow grids of different sizes
     useEffect(() => {
         makeGridData(gridSize, setMaxScore, props.newBoard);
         props.setNewBoard(false);
     }, [props.newBoard]);
-    useEffect(() => {
-        setRevealFaces(false);
-    }, [revealFaces]);
     const gridRows = gridData.map((val, index) => {
         const [rowPoints, rowTorbs] = getPointsAndTorbs(gridData[index]);
         return <CardRow
@@ -71,10 +67,11 @@ const Grid = (props) => {
             roundScore={props.roundScore}
             setRoundScore={props.setRoundScore}
             clickState={props.clickState}
-            revealFaces={revealFaces}
-            setRevealFaces={setRevealFaces}
+            revealFaces={props.revealFaces}
+            setRevealFaces={props.setRevealFaces}
             maxScore={maxScore}
             newBoard={props.newBoard}
+            setTotalScore={props.setTotalScore}
         />
     });
     return (

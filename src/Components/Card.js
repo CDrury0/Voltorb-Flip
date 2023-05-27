@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import cardBack from "../Images/cardback.png";
 import CardBlotter from "./CardBlotter";
 
-const Card = ({value, roundScore, cardFront, setRoundScore, clickState, revealFaces, setRevealFaces, maxScore, newBoard}) => {
+const Card = ({value, roundScore, cardFront, setRoundScore, clickState, revealFaces, setRevealFaces, maxScore, newBoard, setTotalScore}) => {
     const [cardImg, setCardImg] = useState(cardBack);
     const [blotters, setBlotters] = useState([]);
     const getClickAction = () => {
@@ -32,7 +32,7 @@ const Card = ({value, roundScore, cardFront, setRoundScore, clickState, revealFa
         //since the new value of roundScore is not available until after a re-render, doing the multiplication operation here reliably yields the same result
         else if (roundScore * value === maxScore) {
             setRevealFaces(true);
-            //add roundScore to totalScore
+            setTotalScore(roundScore * value);
         }
     }
 
