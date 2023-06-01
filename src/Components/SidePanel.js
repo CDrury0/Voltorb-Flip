@@ -6,6 +6,7 @@ const SidePanel = (props) => {
     return(
         <div className="SidePanel">
             <div className="subPanel" id="counterSubPanel">
+                <h1>Score</h1>
                 <ScoreCounter score={props.roundScore}/>
                 <h2 id="totalScore">{"Total Score: " + props.totalScore}</h2>
             </div>
@@ -17,8 +18,6 @@ const SidePanel = (props) => {
                     <BlotterButton value={2} setClickState={props.setClickState} clickState={props.clickState}/>
                     <BlotterButton value={3} setClickState={props.setClickState} clickState={props.clickState}/>
                 </div>
-            </div>
-            <div className="subPanel">
                 <div id="buttonRow">
                     <NewGameButton setNewBoard={props.setNewBoard} setRoundScore={props.setRoundScore} setRevealFaces={props.setRevealFaces} />
                     {/*Below button is bank points*/}

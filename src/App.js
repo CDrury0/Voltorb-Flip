@@ -4,6 +4,7 @@ import Grid from "./Components/Grid.js";
 import SidePanel from "./Components/SidePanel.js";
 
 function App() {
+    window.onresize();
     const storedScore = localStorage.getItem("score");
     const [totalScore, setTotalScore] = useState(!!storedScore ? parseInt(storedScore) : 0);
     const [roundScore, setRoundScore] = useState(0);
@@ -40,5 +41,12 @@ function App() {
         </div>
     );
 }
+
+window.onresize = () => {
+    const rootElement = document.querySelector(":root");
+    const useHorizontal = window.innerWidth > window.innerHeight * 1.2;
+    rootElement.className = useHorizontal ? "horizontal" : "vertical";
+    console.log(rootElement.className);
+};
 
 export default App;

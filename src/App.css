@@ -3,16 +3,35 @@
   src: url("./PressStart2P-Regular.ttf");
 }
 
+:root.horizontal {
+  --layout-direction: row;
+  --side-panel-direction: column;
+  --max-app-height: 100vh;
+  --instruction-padding: 5%;
+}
+
+:root.vertical {
+  --layout-direction: column;
+  --min-grid-height: 85vh;
+  --side-panel-direction: row;
+  --min-sub-panel-width: 50%;
+  --side-panel-wrap: wrap;
+  --sub-panel-bottom-padding: 10px;
+  --credits-alignment: center;
+}
+
 .App {
   background-color: #01360f;
   display: flex;
-  height: 100vh; /*change font scaling for "correct" height when scaled weird*/
+  flex-direction: var(--layout-direction);
+  height: var(--max-app-height);
 }
 
 .Grid {
   flex: 1.2;
   display: flex;
   flex-direction: column;
+  min-height: var(--min-grid-height);
 }
 
 .CardRow {
@@ -52,19 +71,11 @@
 }
 
 .SidePanel {
-  flex: 0.7;
+  flex: 0.8;
   background-color: #31593c;
   display: flex;
-  flex-direction: column;
-}
-
-#gradient {
-  background-image: linear-gradient(to right, #01360f, #31593c);
-  flex: 0.1;
-}
-
-.CardBlotter > h1 {
-  font-size: max(3vh, 1vw);
+  flex-direction: var(--side-panel-direction);
+  flex-wrap: var(--side-panel-wrap);
 }
 
 button {
@@ -81,10 +92,13 @@ button:hover:active {
 }
 
 .subPanel {
+  min-width: var(--min-sub-panel-width);
+  flex-wrap: wrap;
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: var(--sub-panel-bottom-padding);
 }
 
 #blotter0 {
@@ -117,6 +131,7 @@ button:hover:active {
 
 #credits {
   flex-direction: column-reverse;
+  align-self: var(--credits-alignment);
   padding-bottom: 2vh;
 }
 
@@ -127,18 +142,22 @@ button:hover:active {
 #totalScore {
   margin-top: 0;
   font-size: 1.2vw;
-  height: 4vh;
+  padding-bottom: 1%;
 }
 
 #instructions {
-  padding-left: 5%;
+  padding-left: var(--instruction-padding);
   align-items: flex-start;
 }
 
-#instructions > h1 {
+#counterSubPanel > h1 {
+  margin: 0;
+}
+
+h1, h3 {
   margin: 0;
   text-align: left;
-  font-size: 1.25vw;
+  font-size: max(3vh, 1vw);
   padding-bottom: 4px;
 }
 
@@ -157,7 +176,8 @@ h2 {
   border: thin solid black;
   border-radius: 0.5vw;
   font-family: "Press Start";
-  padding-top: 7px;
+  padding-top: 1.2%;
+  margin: 0 0 3% 0;
 }
 
 h3 {
