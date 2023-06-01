@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/voltorb-flip/static/css/main.57a0e536.css",
-    "main.js": "/voltorb-flip/static/js/main.dde99449.js",
+    "main.css": "/voltorb-flip/static/css/main.d2f5c042.css",
+    "main.js": "/voltorb-flip/static/js/main.78191584.js",
     "static/js/787.4de18f9e.chunk.js": "/voltorb-flip/static/js/787.4de18f9e.chunk.js",
     "static/media/PressStart2P-Regular.ttf": "/voltorb-flip/static/media/PressStart2P-Regular.21503c6a5385ab41dde9.ttf",
     "static/media/voltorb-icon.svg": "/voltorb-flip/static/media/voltorb-icon.238be665ceb659e90286bdf7a5766144.svg",
@@ -9,12 +9,12 @@
     "static/media/one.svg": "/voltorb-flip/static/media/one.e7328315a9c66a02b1633571e72b9b0d.svg",
     "static/media/three.svg": "/voltorb-flip/static/media/three.0eae2a3fdeb98cb2bda882a2aa1c39cc.svg",
     "static/media/two.svg": "/voltorb-flip/static/media/two.c7b30cfdd20d9694c61674d8701fe0b6.svg",
-    "main.57a0e536.css.map": "/voltorb-flip/static/css/main.57a0e536.css.map",
-    "main.dde99449.js.map": "/voltorb-flip/static/js/main.dde99449.js.map",
+    "main.d2f5c042.css.map": "/voltorb-flip/static/css/main.d2f5c042.css.map",
+    "main.78191584.js.map": "/voltorb-flip/static/js/main.78191584.js.map",
     "787.4de18f9e.chunk.js.map": "/voltorb-flip/static/js/787.4de18f9e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.57a0e536.css",
-    "static/js/main.dde99449.js"
+    "static/css/main.d2f5c042.css",
+    "static/js/main.78191584.js"
   ]
 }
