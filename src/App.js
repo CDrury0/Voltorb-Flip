@@ -4,15 +4,15 @@ import Grid from "./Components/Grid.js";
 import SidePanel from "./Components/SidePanel.js";
 
 function App() {
-    const scoreCookieKey = "score=";
-    const [totalScore, setTotalScore] = useState(!!document.cookie ? parseInt(document.cookie.slice(scoreCookieKey.length)) : 0);
+    const storedScore = localStorage.getItem("score");
+    const [totalScore, setTotalScore] = useState(!!storedScore ? parseInt(storedScore) : 0);
     const [roundScore, setRoundScore] = useState(0);
     const [clickState, setClickState] = useState(4);
     const [revealFaces, setRevealFaces] = useState(false);
     const [newBoard, setNewBoard] = useState(false);
     const passedSetTotalScore = (newScore) => {
         setTotalScore(totalScore + newScore);
-        document.cookie = (scoreCookieKey + (totalScore + newScore) + ";");
+        localStorage.setItem("score", (totalScore + newScore));
     }
     return (
         <div className="App">
